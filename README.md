@@ -6,7 +6,7 @@ Creates the following resources:
 * CloudWatch log group.
 * Security Groups for the ECS service.
 * ECS service.
-* Task definition using `nginx:stable` (see below).
+* Task definition using `golang:1.11-alpine` (see below).
 * Configurable associations with Network Load Balancers (NLB) and Application Load Balancers (ALB).
 
 We create an initial task definition using the `nginx:stable` image as a way
