@@ -130,3 +130,9 @@ variable "nlb_subnet_cidr_blocks" {
   default     = []
   type        = "list"
 }
+
+variable "assign_public_ip" {
+  description = "Only use if running task in public subnet."
+  default     = false
+  type        = "string"
+}
