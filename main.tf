@@ -152,7 +152,7 @@ resource "aws_security_group_rule" "app_ecs_allow_https_from_alb" {
 }
 
 resource "aws_security_group_rule" "app_ecs_allow_health_check_from_alb" {
-  count = "${(var.associate_alb > 0 && var.container_health_check_port) || (var.container_port != var.container_health_check_port) ? 1 : 0 }"
+  count = "${(var.associate_alb > 0 && var.container_health_check_port > 0) || (var.container_port != var.container_health_check_port) ? 1 : 0 }"
 
   description       = "Allow in health check from ALB"
   security_group_id = "${aws_security_group.ecs_sg.id}"
